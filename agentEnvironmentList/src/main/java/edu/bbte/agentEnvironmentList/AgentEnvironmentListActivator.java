@@ -7,7 +7,13 @@ import org.osgi.framework.ServiceRegistration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-
+/**
+ * Az AgentEnvironentListActivator osztály, amely
+ * a start metódus által beregisztrálja a szolgáltatás 
+ * tárolóba az általa közzétett szolgáltatásokat
+ * @author Gáll
+ *
+ */
 public class AgentEnvironmentListActivator implements BundleActivator  {
 	
 	private static final Logger logger = LoggerFactory.getLogger (AgentEnvironmentListActivator.class);

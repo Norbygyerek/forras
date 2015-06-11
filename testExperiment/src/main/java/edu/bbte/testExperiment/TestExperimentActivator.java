@@ -1,40 +1,45 @@
 package edu.bbte.testExperiment;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.InvalidSyntaxException;
 import org.osgi.framework.ServiceReference;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import edu.bbte.agent.Agent;
 import edu.bbte.environment.Environment;
 import edu.bbte.robo.Robo;
 import edu.bbte.roboCommunication.RoboCommunication;
 
+/**
+ * A TestExperimentActivator osztály lekérdezi
+ * a szükséges szolgáltatásokat és általuk
+ * elidít egy tesztet
+ * @author Gáll
+ *
+ */
 public class TestExperimentActivator implements BundleActivator {
 	
-	private static final Logger logger = Logger.getLogger(TestExperimentActivator.class.getSimpleName());
+	private static final Logger logger = LoggerFactory.getLogger(TestExperimentActivator.class);
 
 	private  ServiceReference<?>[] agentServiceReference;
 	private  ServiceReference<?>[] environmentServiceReference;
 	private  ServiceReference<?>[] roboCommunicationServiceReference;
 
-	
-	
 	private Agent              agent;
 	private Environment        environment;
 	private RoboCommunication  roboCommunication;
 
 	private BundleContext bundleContext;
 
+	
+	
     public void start(BundleContext context) throws Exception {
 
     	bundleContext = context;
-    	
 
-    
     	Thread thread = new Thread() {
     		
     	    public void run() {
@@ -47,7 +52,7 @@ public class TestExperimentActivator implements BundleActivator {
     	};
 
     	  thread.start();
-      	logger.log(Level.INFO,"STARTED the TestExperiment!");
+      	logger.info("STARTED the TestExperiment!");
     	
     }
     
@@ -57,11 +62,12 @@ public class TestExperimentActivator implements BundleActivator {
         context.ungetService(environmentServiceReference[0]);
         context.ungetService(roboCommunicationServiceReference[0]);
        
-    	logger.log(Level.INFO,"STOPPED the TestExperiment!");
+    	logger.info("STOPPED the TestExperiment!");
     }
     
     public void startExperiment() throws InvalidSyntaxException {
     	
+    	// a szolgáltatások lekérdezése
     	agentServiceReference             =
     			bundleContext.getServiceReferences(Agent.class.getName(), "(AgentName=EpsilonGreedy)");
     	agent                             = (Agent) bundleContext.getService(agentServiceReference[0]);
@@ -75,11 +81,10 @@ public class TestExperimentActivator implements BundleActivator {
         roboCommunication                 = (RoboCommunication) bundleContext.getService(roboCommunicationServiceReference[0]);
         
 
-    	
-    	
+    	// a roboCommunication beállítása a lekérdezett agent és environment példányokra
     	roboCommunication.setCommunication(environment, agent, "CartPole", "EpsilonGreedy");
 
-
+    	// a TestExperiment osztály setExperiment() metódusa által beállításra kerül a kommunikáció
 		TestExperiment.setExperiment(roboCommunication);
     }
     

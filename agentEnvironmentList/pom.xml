@@ -5,10 +5,10 @@
 	<parent>
 		<groupId>edu.bbte</groupId>
 		<artifactId>roboRun</artifactId>
-		<version>1.0 - RELEASE</version>
+		<version>1.0.0-RELEASE</version>
 	</parent>
-  <artifactId>agentEnvironmentList</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+
+  	<artifactId>agentEnvironmentList</artifactId>
 	<packaging>bundle</packaging>
 
 	<name>agentEnvironmentList</name>
@@ -29,7 +29,7 @@
 		<dependency>
 			<groupId>edu.bbte</groupId>
 			<artifactId>robo</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>1.0.0-RELEASE</version>
 		</dependency>
 
 		<dependency>

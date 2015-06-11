@@ -9,7 +9,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
+/**
+ * 
+ * @author Gáll
+ *
+ */
 @Entity
 @Table (name = "roborunresults")
 public class BaseTest implements Serializable {

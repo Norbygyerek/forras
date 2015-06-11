@@ -2,36 +2,48 @@ package edu.bbte.testExperiment;
 
 import java.io.IOException;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import edu.bbte.robo.Robo;
 
+/**
+ * 
+ * @author Gáll
+ *
+ */
 public class TestExperiment {
 	
-	protected static final int kNumEpisodes = 10;
-	protected static int rlNumSteps[];
-	protected static double rlReturn[];
+	private static final Logger logger = LoggerFactory.getLogger(TestExperiment.class);
 	
-	//cutoff
-	protected static int maxStepsPerEpisode=100;
+	private final static int numOfEpisodes      = 10;
+	private final static int maxStepsPerEpisode = 10000;
+	
+	private static int       numOfSteps[];
+	private static double    returnValues[];
+	
+	private static Robo      robo;
 	
 	
-	private static  Robo robo;
-	
-
-	protected static void run(int numEpisodes) throws IOException {
+	public TestExperiment() {
 		
-		/*run for num_episode number of episodes and store the number of steps and return from each episode*/        	
-		for(int x = 0; x < numEpisodes; ++x) {
-			System.out.print("Episode: "+(x+1));
-			robo.roboEpisode(maxStepsPerEpisode, kNumEpisodes);
-			System.out.println("\t steps: " + robo.roboNumOfSteps()); 
-			try {
-				Thread.sleep(5000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			rlNumSteps[x] = robo.roboNumOfSteps();
-			rlReturn[x] = robo.roboReturn();
+		
+	}
+
+	private static void run(int numEpisodes) throws IOException {
+		
+		// tesz futtatása       	
+		for(int i = 0; i < numEpisodes; ++i) {
+			
+			logger.info("Episode: "+(i+1));
+
+			robo.roboEpisode(maxStepsPerEpisode, numOfEpisodes);
+			
+			logger.info("\t steps: " + robo.roboNumOfSteps());
+			
+			
+			numOfSteps[i]   = robo.roboNumOfSteps();
+			returnValues[i] = robo.roboReturn();
 		}
 		
 		robo.terminate();
@@ -41,36 +53,39 @@ public class TestExperiment {
 		
 		robo = roboControl;
 		
-		double avgSteps = 0.0;
+		double avgSteps  = 0.0;
 		double avgReturn = 0.0;
 
-		rlNumSteps = new int[TestExperiment.kNumEpisodes];
-		rlReturn = new double[TestExperiment.kNumEpisodes];
+		numOfSteps   = new int[TestExperiment.numOfEpisodes];
+		returnValues = new double[TestExperiment.numOfEpisodes];
 
 		robo.roboInit();
 
-		System.out.println("Running: "+kNumEpisodes+" with a cutoff each of: "+maxStepsPerEpisode+" steps.");
+		logger.info("Running: " + numOfEpisodes + " with a cutoff each of: " + maxStepsPerEpisode + " steps.");
 		
 		try {
-			run(kNumEpisodes);
+			
+			run(numOfEpisodes);
+			
 		} catch (IOException e) {
+			
 			e.printStackTrace();
 		}
 		
-		/*add up all the steps and all the returns*/
-		for (int i = 0; i < TestExperiment.kNumEpisodes; ++i) {
-		    avgSteps += rlNumSteps[i];
-		    avgReturn += rlReturn[i];
+		
+		for (int i = 0; i < TestExperiment.numOfEpisodes; ++i) {
+		    
+			avgSteps  += numOfSteps[i];
+		    avgReturn += returnValues[i];
 		}
 		
-		/*average steps and returns*/
-		avgSteps /= (double)TestExperiment.kNumEpisodes;
-		avgReturn /= (double)TestExperiment.kNumEpisodes;
+		avgSteps  /= (double)TestExperiment.numOfEpisodes;
+		avgReturn /= (double)TestExperiment.numOfEpisodes;
 		
-		/*print out results*/
-		System.out.println("Number of episodes: " + TestExperiment.kNumEpisodes);
-		System.out.println("Average number of steps per episode: " +  avgSteps);
-		System.out.println("Average return per episode: " + avgReturn);
-		System.out.println("-----------------------------------------------\n");
+		//----------------------------------------------------------------
+		logger.info("Number of episodes: " + TestExperiment.numOfEpisodes);
+		logger.info("Average number of steps per episode: " +  avgSteps);
+		logger.info("Average return per episode: " + avgReturn);
+		logger.info("-----------------------------------------------\n");
 	}   
 }

@@ -8,7 +8,11 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * Az adatbázis mûveletekért felelõs osztály
+ * @author Gáll
+ *
+ */
 public class JDBCTestDao implements TestDao {
 
 	public List<BaseTest> getAll() {

@@ -37,7 +37,7 @@ import edu.bbte.packages.types.Observation;
  * @author btanner
  */
 /**
- * Az Agent interface, melyet minden Agent impelentál
+ * Az Agent interface, melyet minden Agent implementál
  * Az RL-Glue elgondolás megmaradt, viszont a
  * metódus nevek Javasra cserélődtek
  * @author Gáll

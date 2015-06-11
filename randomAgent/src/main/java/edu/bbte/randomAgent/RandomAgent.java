@@ -37,10 +37,6 @@ public class RandomAgent implements Agent {
         super();
     }
     
-    /**
-     * Tetris doesn't really have any parameters
-     * @return
-     */
     public static ParameterHolder getDefaultParameters() {
     	
         ParameterHolder p = new ParameterHolder();

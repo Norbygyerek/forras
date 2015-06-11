@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>edu.bbte.frontend.vaadin</groupId>
   <artifactId>webFragment</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0.0-RELEASE</version>
     <packaging>bundle</packaging>
 	<name>RoboRun UserInterface Modul</name>
 	<properties>
@@ -35,17 +35,17 @@
 		<dependency>
 			<groupId>edu.bbte</groupId>
 			<artifactId>agentEnvironmentList</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>1.0.0-RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>edu.bbte</groupId>
 			<artifactId>dataModel</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>1.0.0-RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>edu.bbte</groupId>
 			<artifactId>robo</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>1.0.0-RELEASE</version>
 		</dependency>
 	</dependencies>
 	<build>

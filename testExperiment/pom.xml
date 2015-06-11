@@ -4,7 +4,7 @@
 
 	<groupId>edu.bbte</groupId>
 	<artifactId>testExperiment</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0-RELEASE</version>
 	<packaging>bundle</packaging>
 
 	<name>testExperiment</name>
@@ -25,64 +25,83 @@
 		<dependency>
 			<groupId>edu.bbte</groupId>
 			<artifactId>packages</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>1.0.0-RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>edu.bbte</groupId>
 			<artifactId>agent</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>1.0.0-RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>edu.bbte</groupId>
 			<artifactId>environment</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>1.0.0-RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>edu.bbte</groupId>
 			<artifactId>roboCommunication</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>1.0.0-RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>edu.bbte</groupId>
 			<artifactId>randomAgent</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-			<scope>provided</scope>
+			<version>1.0.0-RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>edu.bbte</groupId>
 			<artifactId>agentEpsilonGreedy</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-			<scope>provided</scope>
+			<version>1.0.0-RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>edu.bbte</groupId>
 			<artifactId>environmentMountainCar</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>1.0.0-RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>edu.bbte</groupId>
 			<artifactId>environmentTetris</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>1.0.0-RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>edu.bbte</groupId>
 			<artifactId>environmentHelicopter</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>1.0.0-RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>edu.bbte</groupId>
 			<artifactId>environmentAcrobot</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>1.0.0-RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>edu.bbte</groupId>
 			<artifactId>environmentCartPole</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>1.0.0-RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>edu.bbte</groupId>
 			<artifactId>robo</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>1.0.0-RELEASE</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>log4j-over-slf4j</artifactId>
+			<version>1.7.12</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>osgi-over-slf4j</artifactId>
+			<version>1.7.12</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>1.7.12</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-jdk14</artifactId>
+			<version>1.7.12</version>
 		</dependency>
 	</dependencies>
 
@@ -115,6 +134,14 @@
 							edu.bbte.environmentTetris,
 							edu.bbte.roboCommunication, *
 						</Import-Package>
+						<Embed-Dependency>
+							slf4j-api,
+							log4j-over-slf4j,
+							osgi-over-slf4j,
+							slf4j-simple,
+							slf4j-jdk14
+						</Embed-Dependency>
+						<Embed-Transitive>true</Embed-Transitive>
 					</instructions>
 				</configuration>
 			</plugin>

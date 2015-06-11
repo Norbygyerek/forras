@@ -23,9 +23,7 @@ public class VaadinActivator implements BundleActivator,
 		ServiceTrackerCustomizer<FragmentFactory, FragmentFactory> {
 	
 	private static final Logger logger = Logger.getLogger(VaadinActivator.class.getSimpleName());
-	
 	private static final List<FragmentFactory> factories = new ArrayList<>();
-
 	protected static BundleContext context;
 
 	ServiceTracker<FragmentFactory, FragmentFactory> fragmentFactoriesTracker;

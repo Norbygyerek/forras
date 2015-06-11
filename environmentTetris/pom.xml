@@ -4,7 +4,7 @@
 
 	<groupId>edu.bbte</groupId>
 	<artifactId>environmentTetris</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0-RELEASE</version>
 	<packaging>bundle</packaging>
 
 	<name>environmentTetris</name>
@@ -25,18 +25,18 @@
 		<dependency>
 			<groupId>edu.bbte</groupId>
 			<artifactId>packages</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>1.0.0-RELEASE</version>
 		</dependency>
 
 		<dependency>
 			<groupId>edu.bbte</groupId>
 			<artifactId>environment</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>1.0.0-RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>edu.bbte</groupId>
 			<artifactId>agentEnvironmentList</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>1.0.0-RELEASE</version>
 		</dependency>
 
 		<dependency>

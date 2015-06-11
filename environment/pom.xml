@@ -5,10 +5,9 @@
 	<parent>
 		<groupId>edu.bbte</groupId>
 		<artifactId>roboRun</artifactId>
-		<version>1.0 - RELEASE</version>
+		<version>1.0.0-RELEASE</version>
 	</parent>
 	<artifactId>environment</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 	<packaging>bundle</packaging>
 
 	<name>environment</name>
@@ -28,7 +27,7 @@
 		<dependency>
 			<groupId>edu.bbte</groupId>
 			<artifactId>packages</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>1.0.0-RELEASE</version>
 		</dependency>
 
 

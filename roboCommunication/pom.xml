@@ -5,10 +5,10 @@
 	<parent>
 		<groupId>edu.bbte</groupId>
 		<artifactId>roboRun</artifactId>
-		<version>1.0 - RELEASE</version>
+		<version>1.0.0-RELEASE</version>
 	</parent>
+
 	<artifactId>roboCommunication</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 	<packaging>bundle</packaging>
 
 	<name>roboCommunication</name>
@@ -29,33 +29,33 @@
 		<dependency>
 			<groupId>edu.bbte</groupId>
 			<artifactId>packages</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>1.0.0-RELEASE</version>
 		</dependency>		
 		<dependency>
 			<groupId>edu.bbte</groupId>
 			<artifactId>agent</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>1.0.0-RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>edu.bbte</groupId>
 			<artifactId>environment</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>1.0.0-RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>edu.bbte</groupId>
 			<artifactId>robo</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>1.0.0-RELEASE</version>
 		</dependency>
 		
 		<dependency>
 			<groupId>edu.bbte</groupId>
 			<artifactId>dataModel</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>1.0.0-RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>edu.bbte</groupId>
 			<artifactId>agentEnvironmentList</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>1.0.0-RELEASE</version>
 		</dependency>
 
 		<dependency>

@@ -12,6 +12,11 @@ import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * A kapcsolatért felelõs osztály
+ * @author Gáll
+ *
+ */
 public final class ConnectionManager implements Serializable, Externalizable {
 	
 	private static ConnectionManager instance;

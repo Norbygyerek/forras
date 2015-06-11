@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1433852998286
+Bnd-LastModified: 1434037916997
 Build-Jdk: 1.8.0_45
 Built-By: Gￃﾡll
 Bundle-Activator: edu.bbte.frontend.vaadin.fragment.FragmentFactory1Acti
@@ -7,12 +7,12 @@ Bundle-Activator: edu.bbte.frontend.vaadin.fragment.FragmentFactory1Acti
 Bundle-ManifestVersion: 2
 Bundle-Name: RoboRun UserInterface Modul
 Bundle-SymbolicName: edu.bbte.frontend.vaadin.webFragment
-Bundle-Version: 0.0.1.SNAPSHOT
+Bundle-Version: 1.0.0.RELEASE
 Created-By: Apache Maven Bundle Plugin
-Export-Package: edu.bbte.frontend.vaadin.fragment;version="0.0.1";uses:=
- "com.vaadin.ui,edu.bbte.frontend.vaadin,org.osgi.framework"
-Import-Package: edu.bbte.agentEnvironmentList;version="[0.0,1)",edu.bbte
- .dataModel;version="[0.0,1)",edu.bbte.robo;version="[0.0,1)",com.vaadin
+Export-Package: edu.bbte.frontend.vaadin.fragment;uses:="com.vaadin.ui,e
+ du.bbte.frontend.vaadin,org.osgi.framework";version="1.0.0"
+Import-Package: edu.bbte.agentEnvironmentList;version="[1.0,2)",edu.bbte
+ .dataModel;version="[1.0,2)",edu.bbte.robo;version="[1.0,2)",com.vaadin
  .server;version="[7.4,8)",com.vaadin.ui;version="[7.4,8)",com.vaadin.ui
  .renderers;version="[7.4,8)",edu.bbte.frontend.vaadin,elemental.json;ve
  rsion="[7.4,8)",org.osgi.framework;version="[1.6,2)"
