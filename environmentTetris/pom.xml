@@ -1,0 +1,128 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>edu.bbte</groupId>
+	<artifactId>environmentTetris</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>bundle</packaging>
+
+	<name>environmentTetris</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.core</artifactId>
+			<version>4.3.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>edu.bbte</groupId>
+			<artifactId>packages</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>edu.bbte</groupId>
+			<artifactId>environment</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>edu.bbte</groupId>
+			<artifactId>agentEnvironmentList</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>log4j-over-slf4j</artifactId>
+			<version>1.7.12</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>osgi-over-slf4j</artifactId>
+			<version>1.7.12</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>1.7.12</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-jdk14</artifactId>
+			<version>1.7.12</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<version>2.3.7</version>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+						<Bundle-Version>${project.version}</Bundle-Version>
+						<Bundle-Activator>edu.bbte.environmentTetris.TetrisActivator</Bundle-Activator>
+						<Export-Package>
+							edu.bbte.environmentTetris;version=${project.version}
+						</Export-Package>
+						<Import-Package>
+							edu.bbte.packages,
+							edu.bbte.packages.taskSpec,
+							edu.bbte.packages.taskSpec.ranges,
+							edu.bbte.packages.types,
+							edu.bbte.environment,
+							edu.bbte.agentEnvironmentList, *
+						</Import-Package>
+						<Embed-Dependency>
+							slf4j-api,
+							log4j-over-slf4j,
+							osgi-over-slf4j,
+							slf4j-simple,
+							slf4j-jdk14
+						</Embed-Dependency>
+						<Embed-Transitive>true</Embed-Transitive>
+					</instructions>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.7</version>
+				<executions>
+
+					<execution>
+						<id>copy-to-autodeploy</id>
+						<phase>install</phase>
+						<goals>
+							<goal>
+                                run
+                            </goal>
+						</goals>
+						<configuration>
+							<target name="copy .jar to autodeploy directory in glassfish">
+								<copy
+									file="${project.build.directory}/${project.build.finalName}.jar"
+									todir="D:/Hazik/Allamvizsga/GlassFish/glassfish4/glassfish/domains/domain1/autodeploy/bundles" />
+							</target>
+						</configuration>
+					</execution>
+				</executions>
+
+				<configuration>
+					<foo>bar</foo>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

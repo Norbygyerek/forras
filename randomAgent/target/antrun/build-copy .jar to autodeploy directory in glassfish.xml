@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="copy .jar to autodeploy directory in glassfish"  >
+<target name="copy .jar to autodeploy directory in glassfish">
+  <copy file="D:\Letöltések\Dropbox\Allamvizsga\RoboRun\randomAgent\target/randomAgent-0.0.1-SNAPSHOT.jar" todir="D:/Hazik/Allamvizsga/GlassFish/glassfish4/glassfish/domains/domain1/autodeploy/bundles"/>
+</target>
+</project>

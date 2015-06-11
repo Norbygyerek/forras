@@ -1,0 +1,30 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<organization>
+		<name>Babes-Bolyai University</name>
+		<url> www.cs.ubbcluj.ro </url>
+	</organization>
+	<developers>
+		<developer>
+			<name> Gáll Norbert </name>
+			<email>gall_norby@yahoo.com</email>
+			<organization> Babes-Bolyai University </organization>
+			<organizationUrl> http://cs.ubbcluj.ro </organizationUrl>
+		</developer>
+	</developers>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>edu.bbte</groupId>
+	<artifactId>roboRun</artifactId>
+	<version>1.0 - RELEASE</version>
+	<packaging>pom</packaging>
+	<name>The RoboRunProject</name>
+	<modules>
+		<module>agent</module>
+		<module>environment</module>
+		<module>robo</module>
+		<module>packages</module>
+		<module>dataModel</module>
+		<module>roboCommunication</module>
+		<module>agentEnvironmentList</module>
+	</modules>
+</project>

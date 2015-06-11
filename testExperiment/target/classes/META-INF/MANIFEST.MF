@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1433943134591
+Build-Jdk: 1.8.0_45
+Built-By: Gáll
+Bundle-Activator: edu.bbte.testExperiment.TestExperimentActivator
+Bundle-ManifestVersion: 2
+Bundle-Name: testExperiment
+Bundle-SymbolicName: testExperiment
+Bundle-Version: 0.0.1.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Export-Package: edu.bbte.testExperiment;uses:="edu.bbte.robo,org.osgi.fr
+ amework,edu.bbte.roboCommunication,edu.bbte.environment,edu.bbte.agent"
+ ;version="0.0.1.SNAPSHOT"
+Import-Package: edu.bbte.agent;version="[0.0,1)",edu.bbte.agentEpsilonGr
+ eedy;version="[0.0,1)",edu.bbte.environment;version="[0.0,1)",edu.bbte.
+ environmentAcrobot;version="[0.0,1)",edu.bbte.environmentCartPole;versi
+ on="[0.0,1)",edu.bbte.environmentHelicopter;version="[0.0,1)",edu.bbte.
+ environmentMountainCar;version="[0.0,1)",edu.bbte.environmentTetris;ver
+ sion="[0.0,1)",edu.bbte.packages;version="[0.0,1)",edu.bbte.randomAgent
+ ;version="[0.0,1)",edu.bbte.robo;version="[0.0,1)",edu.bbte.roboCommuni
+ cation;version="[0.0,1)",org.osgi.framework;version="[1.6,2)"
+Tool: Bnd-1.50.0
